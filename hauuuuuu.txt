@@ -1,0 +1,34 @@
+-- 1. Khởi tạo ScreenGui & Main Frame (Menu Ngang)
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "ChiiHauuHorizontalV2"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+screenGui.ResetOnSpawn = false
+
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(0, 720, 0, 100) -- Tăng chiều ngang để thêm nút ESP
+mainFrame.Position = UDim2.new(0.5, -360, 0, 50)
+mainFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+mainFrame.Parent = screenGui
+Instance.new("UICorner", mainFrame).CornerRadius = UDim.new(0, 15)
+Instance.new("UIStroke", mainFrame).Color = Color3.fromRGB(0, 170, 255)
+
+-- Container chứa các nút
+local container = Instance.new("Frame")
+container.Size = UDim2.new(1, -20, 0, 60)
+container.Position = UDim2.new(0, 10, 0, 35)
+container.BackgroundTransparency = 1
+container.Parent = mainFrame
+local layout = Instance.new("UIListLayout")
+layout.FillDirection = Enum.FillDirection.Horizontal
+layout.Padding = UDim.new(0, 8)
+layout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+layout.Parent = container
+
+-- 2. Hàm tạo nút nhanh
+local function AddButton(text)
+    local btn = Instance.new("TextButton")
+    btn.Text = text
+    btn.Size = UDim2.new(0, 110, 0, 45)
+    btn.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+    btn.TextColor3 = Color3.fromRGB(255,
+    
